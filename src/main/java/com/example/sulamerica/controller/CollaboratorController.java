@@ -30,10 +30,17 @@ public class CollaboratorController {
        return ResponseEntity.ok(service.findAll());
     }
 
+    @GetMapping("/find/{collaboratorId}")
+    public ResponseEntity<CollaboratorDTO> findById(
+            @PathVariable(value = "collaboratorId") Integer collaboratorId
+    ){
+        return ResponseEntity.ok(service.findById(collaboratorId));
+    }
 
-    @DeleteMapping("/{CollaboratorId}")
+
+    @DeleteMapping("/{collaboratorId}")
     public ResponseEntity<CollaboratorDTO> deleteById(
-            @PathVariable(value = "CollaboratorId") Integer CollaboratorId
+            @PathVariable(value = "collaboratorId") Integer CollaboratorId
     ){
         return ResponseEntity.ok(service.deleteById(CollaboratorId));
     }

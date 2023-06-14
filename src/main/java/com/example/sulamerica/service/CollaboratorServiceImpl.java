@@ -43,6 +43,12 @@ public class CollaboratorServiceImpl implements CollaboratorService{
     }
 
     @Override
+    public CollaboratorDTO findById(Integer collaboratorId) {
+    Optional<Collaborator> collaborator = repository.findById(collaboratorId);
+     return collaboratorMapper.map(collaborator.get());
+    }
+
+    @Override
     public List<CollaboratorDTO> findBySector(Integer sectorId) {
 
       return collaboratorMapper.map(repository.findBySectorId(sectorId));

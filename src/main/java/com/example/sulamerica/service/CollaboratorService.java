@@ -10,6 +10,8 @@ public interface CollaboratorService {
 
     List<CollaboratorDTO> findAll();
 
+    CollaboratorDTO findById(Integer collaboratorId);
+
     List<CollaboratorDTO> findBySector(Integer sectorId);
 
     CollaboratorDTO deleteById(Integer collaboratorId);
